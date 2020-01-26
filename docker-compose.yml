@@ -30,7 +30,7 @@ services:
     image: ethereum/client-go:alltools-v1.9.10
     depends_on: 
       - bootnode
-    entrypoint: geth --datadir /datadir --keystore /keystore --networkid 1337 --rpc --rpcaddr '0.0.0.0' --rpcport 8545 --ws --wsaddr '0.0.0.0' --wsport 8546 --bootnodes="enode://41d88842cd8d6e29d8baf237138bf6bf7a8b9689f82c2f0e6a96969e9f6aa239036877ce5dc2f6a724f2e64520f9d51b6e148a040b8fe6c836eea3ed10abb866@172.31.2.1:0?discport=30301"
+    entrypoint: geth --datadir /datadir --keystore /keystore --networkid 1337 --shh --rpc --rpcaddr '0.0.0.0' --rpcport 8545 --ws --wsaddr '0.0.0.0' --wsport 8546 --bootnodes="enode://41d88842cd8d6e29d8baf237138bf6bf7a8b9689f82c2f0e6a96969e9f6aa239036877ce5dc2f6a724f2e64520f9d51b6e148a040b8fe6c836eea3ed10abb866@172.31.2.1:0?discport=30301"
     working_dir: /datadir/
     volumes:
         - ./datadir1:/datadir/
@@ -44,7 +44,7 @@ services:
     image: ethereum/client-go:alltools-v1.9.10
     depends_on: 
       - bootnode
-    entrypoint: geth --datadir /datadir --keystore /keystore --networkid 1337 --rpc --rpcaddr '0.0.0.0' --rpcport 8545 --ws --wsaddr '0.0.0.0' --wsport 8546 --bootnodes="enode://41d88842cd8d6e29d8baf237138bf6bf7a8b9689f82c2f0e6a96969e9f6aa239036877ce5dc2f6a724f2e64520f9d51b6e148a040b8fe6c836eea3ed10abb866@172.31.2.1:0?discport=30301"
+    entrypoint: geth --datadir /datadir --keystore /keystore --networkid 1337 --shh --rpc --rpcaddr '0.0.0.0' --rpcport 8545 --ws --wsaddr '0.0.0.0' --wsport 8546 --bootnodes="enode://41d88842cd8d6e29d8baf237138bf6bf7a8b9689f82c2f0e6a96969e9f6aa239036877ce5dc2f6a724f2e64520f9d51b6e148a040b8fe6c836eea3ed10abb866@172.31.2.1:0?discport=30301"
     working_dir: /datadir/
     volumes:
         - ./datadir2:/datadir/
