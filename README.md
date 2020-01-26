@@ -46,7 +46,15 @@ A genesis file was created using puppeth.
 
 ```bash
 docker-compose up --rm puppeth
+```
 
+The genesis file was exported.
+
+The nodes have to be initialized using the genesis file:
+
+```bash
+docker-compose run --no-deps --rm node1 init /genesis.json
+docker-compose run --no-deps --rm node2 init /genesis.json
 ```
 
 ## generate new keys
@@ -54,3 +62,28 @@ docker-compose up --rm puppeth
 ```bash
 docker-compose run --rm geth account new
 ```
+
+## run
+
+To send a message from app2 to app1 start the nodes.
+
+```bash
+docker-compose up -d node1
+docker-compose up -d node2
+```
+
+Wait some seconds the nodes can find each other using the bootnode.
+
+Start the first app.
+
+```bash
+docker-compose up app1
+```
+
+In another terminal start the second sending app.
+
+```bash
+docker-compose up app2
+```
+
+App 2 will send Hello World! which will be printed on app 1.
